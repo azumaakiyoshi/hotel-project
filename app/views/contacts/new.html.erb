@@ -1,0 +1,17 @@
+<h1>お問い合わせ</h1>
+
+<%= form_with(model: @contact, local: true) do |form| %>
+<!-- name -->
+  <div class="field">
+    <%= form.label :お名前 %>
+    <%= form.text_field :name, id: :contact_name %>
+  </div>
+<!-- description -->
+  <div class="field">
+    <%= form.label :内容 %>
+    <%= form.text_area :content, id: :contact_content %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

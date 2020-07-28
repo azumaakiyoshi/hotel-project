@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<%= link_to 'Back', hotel_reviews_path(@hotel) %>
+<div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <img src="<%=@hotel.picture_url%>" class="card-img-top" alt="<%=@hotel.picture  %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= @hotel.name %></h5>
+              <h5 class="card-title"><%= @review.name %></h5>
+              <h5 class="card-title"><%= @review.title %></h5>
+              <p class="card-text"><%= @review.description %></p>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted"><%= link_to 'Back', hotel_reviews_path(@hotel) %></small>
+            </div>
+          </div> 
+        </div>
+      </div>
+</div>

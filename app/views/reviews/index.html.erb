@@ -1,0 +1,21 @@
+<p>ホテルのレビューの一覧</p>
+<div class="container">
+      <div class="row">
+<% @reviews.each do |review| %>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="<%=@hotel.picture_url%>" class="card-img-top" alt="<%=@hotel.picture  %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= review.title %></h5>
+              <h5 class="card-title"><%= review.name %></h5>
+              <p class="card-text"><%= review.description %></p>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted"><%= link_to 'レビューの詳細',hotel_review_path(@hotel,review) %></small>
+            </div>
+          </div> 
+        </div>
+<% end %>
+      </div>
+    </div>
+<%= link_to 'Back',hotel_path(@hotel) %>

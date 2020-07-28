@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @prefecture.name %>
+</p>
+<%= image_tag(@prefecture.picture_url, width: 600) if @prefecture.picture.present? %>
+<p>ホテルの一覧</p>
+<div class="container">
+      <div class="row">
+<% @hotels.each do |hotel| %>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="<%=hotel.picture_url%>" class="card-img-top" alt="<%=hotel.picture  %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= hotel.name %></h5>
+              <p class="card-text"><%= hotel.description %></p>
+            </div>
+            <div class="card-footer">
+            <%= link_to '詳細を見る', hotel_path(hotel) %>
+            <%= link_to 'レビューを見る', hotel_reviews_path(hotel) %>
+            </div>
+          </div> 
+        </div>
+<% end %>
+      </div>
+    </div>
+
+<%= link_to 'Back', prefectures_path(@prefecture) %>

@@ -1,0 +1,25 @@
+<h1>ご予約ありがとうございます。</h1>
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= @hotel.name %></h5>
+              <h5 class="card-title"><%= @reservation.name %></h5>
+              <h5 class="card-title"><%= @reservation.checkin %></h5>
+              <h5 class="card-title"><%= @reservation.checkout %></h5>
+              <h5 class="card-title"><%= @reservation.people %></h5>
+            </div>
+            <div class="card-footer">
+            </div>
+          </div> 
+        </div>
+      </div>
+</div>
+
+<%= link_to 'Back', 
+new_hotel_reservation_path(@hotel) %>
